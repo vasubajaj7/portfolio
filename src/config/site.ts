@@ -10,9 +10,8 @@ export const siteConfig = {
   twitter: "@vasubajaj",
   ogImage: ogImage,
   socialLinks: {
-    twitter: "https://twitter.com/vasubajaj",
     github: "https://github.com/vasubajaj7",
-    discord: "https://discord.com",
+    linkedin: "https://linkedin.com/in/vasubajaj",
   },
   navLinks: [
     { text: "Home", href: "/" },

@@ -49,42 +49,119 @@ export const siteConfig = {
 
 <br>
 
-## Content Structure
+## Adding Content
 
-### Case Studies
-Add your project case studies in `src/content/case-studies/`:
+### Adding a New Blog Post
 
-```markdown
+1. **Create a new markdown file** in `src/content/blog/`:
+   ```bash
+   src/content/blog/my-new-post.md
+   ```
+
+2. **Add frontmatter** at the top of the file:
+   ```markdown
+   ---
+   title: "Getting Started with Databricks"
+   description: "A comprehensive guide to Databricks for data engineers"
+   pubDate: 2024-01-15
+   author: "Vasu Bajaj"
+   image: "/blog/databricks-guide.webp"
+   tags: ["Databricks", "Data Engineering", "Apache Spark"]
+   category: "Databricks"
+   ---
+   ```
+
+3. **Write your content** below the frontmatter using Markdown:
+   ```markdown
+   ## Introduction
+   
+   Databricks is a unified analytics platform...
+   
+   ## Key Features
+   
+   - Feature 1
+   - Feature 2
+   ```
+
+4. **Add an image** (optional):
+   - Place your image in `public/blog/`
+   - Reference it in the frontmatter: `image: "/blog/your-image.webp"`
+
+5. **Save the file** - The blog post will automatically appear on your site!
+
+**Note:** Blogs are organized by `category` field. Use categories like:
+- `Databricks`
+- `GCP`
+- `AWS`
+- `Azure`
+- `Snowflake`
+- `Governance`
+
 ---
-title: "Project Title"
-description: "Brief description"
-client: "Client Name"
-date: 2024-01-15
-image: "/case-studies/project.webp"
-tags: ["React", "Next.js"]
-category: "Web Development"
-link: "https://project-url.com"
+
+### Adding a New Case Study
+
+1. **Create a new markdown file** in `src/content/case-studies/`:
+   ```bash
+   src/content/case-studies/my-project.md
+   ```
+
+2. **Add frontmatter** at the top:
+   ```markdown
+   ---
+   title: "Cloud Migration for Enterprise Client"
+   description: "Migrated 50TB data warehouse from on-prem to GCP BigQuery"
+   client: "Fortune 500 Company"
+   date: 2024-01-15
+   image: "/case-studies/cloud-migration.webp"
+   tags: ["GCP", "BigQuery", "Data Migration", "Terraform"]
+   category: "Cloud Architecture"
+   link: "https://project-url.com"
+   ---
+   ```
+
+3. **Write your case study** using this structure:
+   ```markdown
+   ## Project Overview
+   
+   Brief description of the project and objectives.
+   
+   ## Challenge
+   
+   What problems needed to be solved?
+   
+   ## Solution
+   
+   - Approach taken
+   - Technologies used
+   - Implementation details
+   
+   ## Results
+   
+   - 50% cost reduction
+   - 3x performance improvement
+   - Zero downtime migration
+   
+   ## Technologies Used
+   
+   GCP, BigQuery, Terraform, Python, Apache Airflow
+   ```
+
+4. **Add an image** (optional):
+   - Place your image in `public/case-studies/`
+   - Reference it: `image: "/case-studies/your-image.webp"`
+
+5. **Save the file** - The case study will appear automatically!
+
 ---
 
-Your case study content here...
-```
+### Quick Tips
 
-### Blog Posts
-Add blog posts in `src/content/blog/`:
-
-```markdown
----
-title: "Post Title"
-description: "Post description"
-pubDate: 2024-01-15
-author: "Your Name"
-image: "/blog/post.webp"
-tags: ["JavaScript", "Tutorial"]
-category: "Development"
----
-
-Your blog content here...
-```
+- **File naming**: Use lowercase with hyphens (e.g., `databricks-optimization.md`)
+- **Dates**: Use format `YYYY-MM-DD` (e.g., `2024-01-15`)
+- **Images**: Use `.webp` format for best performance
+- **Tags**: Use relevant keywords for better organization
+- **Categories**: Keep consistent naming for proper grouping
 
 <br>
 
