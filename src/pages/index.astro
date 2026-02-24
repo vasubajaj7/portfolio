@@ -9,7 +9,7 @@ import openSourceImg from "../assets/images/open-source.png";
 import { getCollection } from "astro:content";
 
 const metadata = {
-	title: `${siteConfig.name} — Developer & Designer`,
+	title: `${siteConfig.name} — Solutions Architect`,
 	description: siteConfig.description,
 	ignoreTitleTemplate: true,
 };
@@ -25,9 +25,9 @@ const recentBlogs = (await getCollection("blog"))
 
 <BaseLayout {metadata}>
 	<Hero
-		title={`Hi, I'm <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Your Name</span><br class="hidden md:block" />Developer & Designer`}
-		tagline="Portfolio & Blog"
-		description="I craft exceptional digital experiences through code and design. Specializing in full-stack development, UI/UX, and modern web technologies."
+		title={`Hi, I'm <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Vasu Bajaj</span><br class="hidden md:block" />Solutions Architect`}
+		tagline="Cloud & Data Platform Expert"
+		description="Specializing in Databricks, GCP, AWS, Azure, Governance, and Fabric. Building scalable cloud solutions and modern data platforms."
 		actions={[
 			{
 				text: "View Case Studies",
@@ -46,24 +46,24 @@ const recentBlogs = (await getCollection("blog"))
 	<Features
 		tagline="Expertise"
 		title="What I Do"
-		subtitle="Specialized skills and technologies I work with to bring ideas to life."
+		subtitle="Specialized skills in cloud architecture and data platform engineering."
 		features={[
 			{
-				title: "Full-Stack Development",
-				description: "Building scalable web applications with modern frameworks and best practices.",
-				icon: "lucide:code",
+				title: "Cloud Architecture",
+				description: "Designing scalable solutions on AWS, Azure, and GCP with best practices.",
+				icon: "lucide:cloud",
 				iconClass: "bg-blue-500/10 text-blue-400",
 			},
 			{
-				title: "UI/UX Design",
-				description: "Creating intuitive and beautiful user interfaces that delight users.",
-				icon: "lucide:palette",
+				title: "Databricks & Fabric",
+				description: "Building modern data platforms with Databricks and Microsoft Fabric.",
+				icon: "lucide:database",
 				iconClass: "bg-purple-500/10 text-purple-400",
 			},
 			{
-				title: "Performance Optimization",
-				description: "Ensuring fast, efficient, and SEO-friendly web experiences.",
-				icon: "lucide:zap",
+				title: "Governance & Security",
+				description: "Implementing robust governance frameworks and security best practices.",
+				icon: "lucide:shield",
 				iconClass: "bg-pink-500/10 text-pink-400",
 			},
 		]}

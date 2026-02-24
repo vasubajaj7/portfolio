@@ -1,17 +1,17 @@
 import ogImage from "../assets/og-image.png";
 
 export const siteConfig = {
-  name: "Your Portfolio",
-  description: "Full-stack developer & designer crafting exceptional digital experiences. Explore my projects, case studies, and insights.",
-  url: "https://yourportfolio.com",
+  name: "Vasu Bajaj",
+  description: "Solutions Architect specializing in Databricks, GCP, AWS, Azure, Governance, and Fabric. Building scalable cloud solutions and data platforms.",
+  url: "https://vasubajaj.com",
   lang: "en",
   locale: "en_US",
-  author: "Your Name",
-  twitter: "@YourHandle",
+  author: "Vasu Bajaj",
+  twitter: "@vasubajaj",
   ogImage: ogImage,
   socialLinks: {
-    twitter: "https://twitter.com/yourhandle",
-    github: "https://github.com/yourusername",
+    twitter: "https://twitter.com/vasubajaj",
+    github: "https://github.com/vasubajaj7",
     discord: "https://discord.com",
   },
   navLinks: [
