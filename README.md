@@ -1,59 +1,33 @@
-# 🚀 Astro Starter Pro
+# 🚀 Portfolio & Blog
 
-**Astro Starter Pro** is a professional, open-source template for building fast websites using **[Astro 5](https://astro.build/) + [Tailwind CSS 4](https://tailwindcss.com/)**. Designed with industry best practices, optimized SEO, and a modern development experience.
+A professional portfolio website built with **[Astro 5](https://astro.build/) + [Tailwind CSS 4](https://tailwindcss.com/)**. Showcase your projects, case studies, and share your insights through blog posts.
 
 <br>
 
-[![GitHub stars](https://badgen.net/github/stars/devgelo-labs/astro-starter-pro?icon=github&label=Star)](https://github.com/devgelo-labs/astro-starter-pro)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
 [![Astro](https://img.shields.io/badge/Astro-5.0-orange?style=flat-square&logo=astro)](https://astro.build/)
 [![Tailwind](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![Maintainer](https://img.shields.io/badge/maintainer-devgelo-purple?style=flat-square)](https://github.com/devgelo-labs)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](./LICENSE)
 
 <br>
-
-<details open>
-<summary>Table of Contents</summary>
-
-- [Demo](#demo)
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-- [Commands](#commands)
-- [License](#license)
-
-</details>
-
-<br>
-
-## Demo
-
-📌 [https://astrostarterpro.com/](https://astrostarterpro.com/)
 
 ## Features
 
-- ✅ **Dark & Light Mode**: Clean implementation.
-- ✅ **Optimized SEO**: Automatic meta tags, Structured Data (JSON-LD), RSS Feed, Open Graph, Twitter Cards, and native Sitemap.
-- ✅ **Clean Architecture**: Organized and scalable code.
-- ✅ **Reusable Components**: Navbar, Footer, and modern Layouts with Tailwind v4.
-
-<br>
-
-<img alt="Image" src="./github/astro-starter-pro.png" />
+- ✅ **Portfolio Showcase**: Display your best work with case studies
+- ✅ **Blog Platform**: Share insights, tutorials, and thoughts
+- ✅ **Dark & Light Mode**: Clean theme implementation
+- ✅ **Optimized SEO**: Meta tags, Structured Data, RSS Feed, Open Graph, Twitter Cards, and Sitemap
+- ✅ **Clean Architecture**: Organized and scalable code structure
+- ✅ **Responsive Design**: Works perfectly on all devices
 
 <br>
 
 ## Quick Start
 
-To start with this project locally, clone the repository and install dependencies:
-
 ```bash
-# Clone the repository
-git clone https://github.com/devgelo-labs/astro-starter-pro.git
-
-# If you like it, don't forget to leave a star! ⭐
-cd astro-starter-pro
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
 ```
 
@@ -61,21 +35,56 @@ npm run dev
 
 ## Configuration
 
-All global site information is managed in `src/config/site.ts`. Update this file with your data:
+Update your personal information in `src/config/site.ts`:
 
 ```typescript
-// src/config/site.ts
 export const siteConfig = {
-  name: "Astro Starter Pro",
-  description: "Your SEO description",
-  url: "https://astrostarterpro.com",
-  author: "Angelo Pescetto",
+  name: "Your Portfolio",
+  description: "Your description",
+  url: "https://yourportfolio.com",
+  author: "Your Name",
   // ...
 };
 ```
+
 <br>
 
-<img alt="PageSpeed Insights Score 100/100" src="https://github.com/user-attachments/assets/541d4bfc-bcb9-4287-bd91-08564108d706" />
+## Content Structure
+
+### Case Studies
+Add your project case studies in `src/content/case-studies/`:
+
+```markdown
+---
+title: "Project Title"
+description: "Brief description"
+client: "Client Name"
+date: 2024-01-15
+image: "/case-studies/project.webp"
+tags: ["React", "Next.js"]
+category: "Web Development"
+link: "https://project-url.com"
+---
+
+Your case study content here...
+```
+
+### Blog Posts
+Add blog posts in `src/content/blog/`:
+
+```markdown
+---
+title: "Post Title"
+description: "Post description"
+pubDate: 2024-01-15
+author: "Your Name"
+image: "/blog/post.webp"
+tags: ["JavaScript", "Tutorial"]
+category: "Development"
+---
+
+Your blog content here...
+```
 
 <br>
 
@@ -94,9 +103,23 @@ export const siteConfig = {
 
 <br>
 
-## Support the Project
+## Pages
 
-If you find this starter useful, please consider giving it a ⭐ on GitHub! It helps more people discover the project.
+- **Home** (`/`) - Hero section with featured work
+- **About** (`/about`) - Your story and skills
+- **Case Studies** (`/case-studies`) - Portfolio projects
+- **Blog** (`/blog`) - Articles and insights
+- **Contact** (`/contact`) - Get in touch
+
+<br>
+
+## Customization
+
+1. Update `src/config/site.ts` with your information
+2. Replace images in `public/` with your own
+3. Add your case studies to `src/content/case-studies/`
+4. Write blog posts in `src/content/blog/`
+5. Customize colors and styles in `src/styles/global.css`
 
 <br>
 
@@ -106,4 +129,4 @@ This project is under the **MIT** license. See the [LICENSE](./LICENSE) file for
 
 ---
 
-Designed by [Devgelo Labs](https://github.com/devgelo-labs)
+Built with [Astro Starter Pro](https://github.com/devgelo-labs/astro-starter-pro) by [Devgelo Labs](https://github.com/devgelo-labs)

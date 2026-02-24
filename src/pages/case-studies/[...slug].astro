@@ -1,0 +1,105 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const caseStudies = await getCollection("caseStudies");
+  return caseStudies.map((study) => ({
+    params: { slug: study.id },
+    props: { study },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = {
+  study: CollectionEntry<"caseStudies">;
+};
+
+const { study } = Astro.props;
+const { Content } = await study.render();
+
+const metadata = {
+  title: study.data.title,
+  description: study.data.description,
+  image: study.data.image,
+};
+---
+
+<BaseLayout {metadata}>
+  <article class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+    <header class="mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-400 mb-4">
+        <a href="/case-studies" class="hover:text-blue-400 transition-colors">
+          ← Back to Case Studies
+        </a>
+      </div>
+      
+      {study.data.category && (
+        <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-blue-500/10 text-blue-400 mb-4">
+          {study.data.category}
+        </span>
+      )}
+      
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+        {study.data.title}
+      </h1>
+      
+      <p class="text-xl text-gray-400 mb-6">
+        {study.data.description}
+      </p>
+      
+      <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+        <div>
+          <span class="text-gray-400">Client:</span> {study.data.client}
+        </div>
+        <span>•</span>
+        <time datetime={study.data.date.toISOString()}>
+          {study.data.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+          })}
+        </time>
+        {study.data.link && (
+          <>
+            <span>•</span>
+            <a
+              href={study.data.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              View Project →
+            </a>
+          </>
+        )}
+      </div>
+    </header>
+
+    {study.data.image && (
+      <div class="mb-12 rounded-lg overflow-hidden">
+        <img
+          src={study.data.image}
+          alt={study.data.title}
+          class="w-full h-auto"
+        />
+      </div>
+    )}
+
+    <div class="prose prose-invert prose-lg max-w-none">
+      <Content />
+    </div>
+
+    {study.data.tags && (
+      <footer class="mt-12 pt-8 border-t border-gray-800">
+        <h3 class="text-sm font-semibold text-gray-400 mb-3">Technologies</h3>
+        <div class="flex flex-wrap gap-2">
+          {study.data.tags.map((tag) => (
+            <span class="px-3 py-1 text-sm rounded-full bg-gray-800 text-gray-300">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </footer>
+    )}
+  </article>
+</BaseLayout>

@@ -6,41 +6,41 @@ import Values from "../components/widgets/Values.astro";
 import aboutImage from "../assets/images/about-office.webp";
 
 const metadata = {
-    title: "About us",
+    title: "About Me",
     description:
-        "Learn more about our vision, values, and the team behind Astro Starter Pro.",
+        "Learn more about my journey, skills, and passion for creating exceptional digital experiences.",
 };
 
 const values = [
     {
-        title: "Innovation",
+        title: "User-Centered Design",
         description:
-            "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
+            "Every project starts with understanding user needs and creating intuitive experiences.",
     },
     {
-        title: "Commitment",
+        title: "Clean Code",
         description:
-            "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
+            "Writing maintainable, scalable, and well-documented code is a top priority.",
     },
     {
-        title: "Quality",
+        title: "Performance First",
         description:
-            "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
+            "Optimizing for speed and efficiency to deliver the best user experience.",
     },
     {
-        title: "Transparency",
+        title: "Continuous Learning",
         description:
-            "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
+            "Staying updated with the latest technologies and best practices in web development.",
     },
     {
-        title: "Teamwork",
+        title: "Collaboration",
         description:
-            "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
+            "Working closely with clients and teams to bring ideas to life effectively.",
     },
     {
-        title: "Excellence",
+        title: "Attention to Detail",
         description:
-            "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
+            "Ensuring every pixel, interaction, and line of code meets the highest standards.",
     },
 ];
 
@@ -53,34 +53,34 @@ const optimizedImage = await getImage({
 <BaseLayout {metadata}>
     <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
     <Content2
-        title="Our Vision"
+        title="About Me"
         description={[
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "I'm a passionate full-stack developer and designer with over 5 years of experience creating exceptional digital experiences. My journey in web development started with a curiosity about how things work on the internet, and it has evolved into a career dedicated to building fast, accessible, and beautiful web applications.",
+            "I specialize in modern JavaScript frameworks, responsive design, and performance optimization. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through blog posts and tutorials.",
         ]}
         tagline="About"
         image={aboutImage}
-        imageAlt="Modern web development office"
+        imageAlt="Developer workspace"
         actions={[
             {
-                text: "Contact Us",
+                text: "Get in Touch",
                 href: "/contact",
                 variant: "primary",
                 icon: "lucide:mail",
             },
             {
-                text: "View Details",
-                href: "#",
+                text: "View Projects",
+                href: "/case-studies",
                 variant: "secondary",
-                icon: "lucide:arrow-right",
+                icon: "lucide:briefcase",
             },
         ]}
     />
     <Values
         items={values}
         columns={3}
-        tagline="Our Values"
-        title="What Defines Us"
-        subtitle="Principles that guide our daily work"
+        tagline="My Approach"
+        title="How I Work"
+        subtitle="Principles that guide my development process"
     />
 </BaseLayout>

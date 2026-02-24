@@ -3,132 +3,122 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { siteConfig } from "../config/site";
 import Hero from "../components/widgets/Hero.astro";
 import Features from "../components/widgets/Features.astro";
+import Content2 from "../components/widgets/Content2.astro";
 import devImg from "../assets/images/dev_balanced.png";
 import openSourceImg from "../assets/images/open-source.png";
-import Content2 from "../components/widgets/Content2.astro";
+import { getCollection } from "astro:content";
+
 const metadata = {
-	title: `${siteConfig.name} — The next step for your project`,
-	description:
-		"A modern and professional template for your web projects with Astro and Tailwind CSS. Boost your development with a solid foundation.",
+	title: `${siteConfig.name} — Developer & Designer`,
+	description: siteConfig.description,
 	ignoreTitleTemplate: true,
 };
+
+const recentCaseStudies = (await getCollection("caseStudies"))
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.slice(0, 3);
+
+const recentBlogs = (await getCollection("blog"))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
 <BaseLayout {metadata}>
 	<Hero
-		title={`Starter Template for <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Web Developers</span>`}
-		tagline="Astro v5 + Tailwind v4"
-		description={`${siteConfig.description}`}
+		title={`Hi, I'm <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Your Name</span><br class="hidden md:block" />Developer & Designer`}
+		tagline="Portfolio & Blog"
+		description="I craft exceptional digital experiences through code and design. Specializing in full-stack development, UI/UX, and modern web technologies."
 		actions={[
 			{
-				text: "Get Started",
-				href: "https://github.com/devgelo-labs/astro-starter-pro",
+				text: "View Case Studies",
+				href: "/case-studies",
 				variant: "primary",
-				icon: "lucide:github",
+				icon: "lucide:briefcase",
 			},
 			{
-				text: "Our Services",
-				href: "/services",
+				text: "Read Blog",
+				href: "/blog",
 				variant: "secondary",
-				icon: "lucide:arrow-right",
-				ariaLabel: "Learn more about our services",
+				icon: "lucide:book-open",
 			},
 		]}
 	/>
 	<Features
-		tagline="Features"
-		title="What's Included"
-		subtitle="A selection of tools and configurations to streamline your workflow."
+		tagline="Expertise"
+		title="What I Do"
+		subtitle="Specialized skills and technologies I work with to bring ideas to life."
 		features={[
 			{
-				title: "Optimized SEO",
-				description:
-					"Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-				icon: "lucide:scan-search",
+				title: "Full-Stack Development",
+				description: "Building scalable web applications with modern frameworks and best practices.",
+				icon: "lucide:code",
 				iconClass: "bg-blue-500/10 text-blue-400",
 			},
 			{
-				title: "High Performance",
-				description: "Lightweight structure for fast load times.",
-				icon: "lucide:zap",
+				title: "UI/UX Design",
+				description: "Creating intuitive and beautiful user interfaces that delight users.",
+				icon: "lucide:palette",
 				iconClass: "bg-purple-500/10 text-purple-400",
 			},
 			{
-				title: "Tailwind v4",
-				description:
-					"Integrated configuration with the latest version of Tailwind CSS.",
-				icon: "lucide:palette",
+				title: "Performance Optimization",
+				description: "Ensuring fast, efficient, and SEO-friendly web experiences.",
+				icon: "lucide:zap",
 				iconClass: "bg-pink-500/10 text-pink-400",
 			},
 		]}
 	/>
+	
+	{recentCaseStudies.length > 0 && (
 	<Content2
-		items={[
-			{
-				title: "Responsive Design",
-				description:
-					"Base configuration for Meta tags, Open Graph, and Sitemap generation.",
-				icon: "lucide:scan-search",
-				iconClass: "bg-blue-500/10 text-blue-400",
-			},
-			{
-				title: "High Performance",
-				description: "Lightweight structure for fast load times.",
-				icon: "lucide:zap",
-				iconClass: "bg-purple-500/10 text-purple-400",
-			},
-			{
-				title: "Tailwind v4",
-				description:
-					"Integrated configuration with the latest version of Tailwind CSS.",
-				icon: "lucide:palette",
-				iconClass: "bg-pink-500/10 text-pink-400",
-			},
-		]}
+		items={recentCaseStudies.map(study => ({
+			title: study.data.title,
+			description: study.data.description,
+			icon: "lucide:briefcase",
+			iconClass: "bg-blue-500/10 text-blue-400",
+		}))}
 		image={devImg}
-		imageAlt="Development"
+		imageAlt="Recent Projects"
 	>
 		<Fragment>
 			<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-				Development
+				Featured Case Studies
 			</h3>
-			We provide a solid foundation to start your projects with best practices.
+			Explore my recent projects and the impact they've made.
+			<a href="/case-studies" class="inline-flex items-center text-blue-400 hover:text-blue-300 mt-4">
+				View all case studies
+				<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</a>
 		</Fragment>
 	</Content2>
+	)}
+
+	{recentBlogs.length > 0 && (
 	<Content2
-		items={[
-			{
-				title: "Open Source",
-				description:
-					"Developed under the MIT license, free for personal and commercial use.",
-				icon: "lucide:github",
-				iconClass: "bg-indigo-500/10 text-indigo-400",
-			},
-			{
-				title: "Community Driven",
-				description:
-					"Built with the feedback and contributions of the developer community.",
-				icon: "lucide:users",
-				iconClass: "bg-orange-500/10 text-orange-400",
-			},
-			{
-				title: "Regular Updates",
-				description:
-					"Continuously improved with the latest technologies and best practices.",
-				icon: "lucide:refresh-cw",
-				iconClass: "bg-teal-500/10 text-teal-400",
-			},
-		]}
+		items={recentBlogs.map(post => ({
+			title: post.data.title,
+			description: post.data.description,
+			icon: "lucide:book-open",
+			iconClass: "bg-purple-500/10 text-purple-400",
+		}))}
 		image={openSourceImg}
-		imageAlt="Community and Open Source"
+		imageAlt="Recent Blog Posts"
 		isReversed={true}
 	>
 		<Fragment>
 			<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-				Open Source & Community
+				Latest from the Blog
 			</h3>
-			Join the revolution of modern web development. This project is open for
-			everyone to use, learn from, and contribute to.
+			Insights, tutorials, and thoughts on web development and design.
+			<a href="/blog" class="inline-flex items-center text-purple-400 hover:text-purple-300 mt-4">
+				Read all posts
+				<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</a>
 		</Fragment>
 	</Content2>
+	)}
 </BaseLayout>
