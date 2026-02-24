@@ -4,9 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import remarkReadingTime from "remark-reading-time";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: "https://astrostarterpro.com/",
   integrations: [sitemap(), icon()],
+
   markdown: {
     remarkPlugins: [
       remarkReadingTime,
@@ -18,14 +21,19 @@ export default defineConfig({
       },
     ],
   },
+
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "viewport",
   },
+
   build: {
     inlineStylesheets: "always",
   },
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
