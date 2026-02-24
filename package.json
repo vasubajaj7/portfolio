@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "astro": "astro",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
@@ -14,10 +14,13 @@
     "test": "vitest",
     "check": "astro check",
     "typecheck": "tsc --noEmit",
-    "build-preview": "npm run build && npm run preview"
+    "build-preview": "npm run build && npm run preview",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.6.1",
     "@iconify-json/lucide": "^1.2.86",
@@ -42,6 +45,7 @@
     "globals": "^17.0.0",
     "prettier": "^3.7.4",
     "typescript-eslint": "^8.52.0",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.16",
+    "wrangler": "^4.68.0"
   }
 }
