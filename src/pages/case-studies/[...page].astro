@@ -30,14 +30,14 @@ const metadata = {
       <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
         Case Studies
       </h1>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         Real projects, real results. Explore how I've helped clients achieve their goals.
       </p>
     </div>
 
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {page.data.map((study) => (
-        <article class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-800 bg-gray-900/50 transition-all hover:border-gray-700 hover:shadow-lg">
+        <article class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg">
           {study.data.image && (
             <div class="aspect-video overflow-hidden">
               <img
@@ -50,16 +50,16 @@ const metadata = {
           <div class="flex flex-1 flex-col p-6">
             <div class="flex-1">
               {study.data.category && (
-                <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-blue-500/10 text-blue-400 mb-3">
+                <span class="inline-block px-3 py-1 text-xs font-medium rounded-full bg-blue-50 text-blue-600 mb-3">
                   {study.data.category}
                 </span>
               )}
-              <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+              <h2 class="text-xl font-semibold mb-2 text-gray-900 group-hover:text-blue-600 transition-colors">
                 <a href={`/case-studies/${study.id}`} class="hover:underline">
                   {study.data.title}
                 </a>
               </h2>
-              <p class="text-gray-400 text-sm mb-4">
+              <p class="text-gray-600 text-sm mb-4">
                 {study.data.description}
               </p>
               <div class="flex items-center text-sm text-gray-500">
@@ -74,7 +74,7 @@ const metadata = {
               </div>
             </div>
             {study.data.tags && (
-              <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800">
+              <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-200">
                 {study.data.tags.slice(0, 3).map((tag) => (
                   <span class="text-xs text-gray-500">#{tag}</span>
                 ))}
@@ -90,7 +90,7 @@ const metadata = {
         {page.url.prev && (
           <a
             href={page.url.prev}
-            class="px-6 py-2 rounded-lg border border-gray-800 hover:border-gray-700 transition-colors"
+            class="px-6 py-2 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors text-gray-700"
           >
             ← Previous
           </a>
@@ -98,7 +98,7 @@ const metadata = {
         {page.url.next && (
           <a
             href={page.url.next}
-            class="px-6 py-2 rounded-lg border border-gray-800 hover:border-gray-700 transition-colors"
+            class="px-6 py-2 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors text-gray-700"
           >
             Next →
           </a>
