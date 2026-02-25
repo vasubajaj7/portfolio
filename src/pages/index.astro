@@ -4,9 +4,11 @@ import { siteConfig } from "../config/site";
 import Hero from "../components/widgets/Hero.astro";
 import Features from "../components/widgets/Features.astro";
 import Content2 from "../components/widgets/Content2.astro";
+import Values from "../components/widgets/Values.astro";
 import devImg from "../assets/images/dev_balanced.png";
-import openSourceImg from "../assets/images/open-source.png";
+import aboutImage from "../assets/images/about-office.webp";
 import { getCollection } from "astro:content";
+import { getImage } from "astro:assets";
 
 const metadata = {
 	title: `${siteConfig.name} — Solutions Architect`,
@@ -21,104 +23,233 @@ const recentCaseStudies = (await getCollection("caseStudies"))
 const recentBlogs = (await getCollection("blog"))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
+
+const values = [
+    {
+        title: "Cloud-Native Solutions",
+        description: "Architecting scalable, resilient cloud infrastructure across AWS, Azure, and GCP.",
+    },
+    {
+        title: "Data Platform Engineering",
+        description: "Building modern data platforms with Databricks and Microsoft Fabric for analytics at scale.",
+    },
+    {
+        title: "Governance & Compliance",
+        description: "Implementing robust governance frameworks ensuring security and regulatory compliance.",
+    },
+    {
+        title: "Best Practices",
+        description: "Following industry standards and cloud-native patterns for optimal performance.",
+    },
+    {
+        title: "Automation First",
+        description: "Leveraging IaC and DevOps practices to automate infrastructure and deployments.",
+    },
+    {
+        title: "Continuous Learning",
+        description: "Staying current with emerging cloud technologies and architectural patterns.",
+    },
+];
+
+const optimizedImage = await getImage({
+    src: aboutImage,
+    format: "webp",
+});
 ---
 
 <BaseLayout {metadata}>
-	<Hero
-		title={`Hi, I'm <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Vasu Bajaj</span><br class="hidden md:block" />`}
-		tagline="Cloud & Data Platform Expert"
-		description="A Solutions Architect specializing in Databricks, GCP, AWS, Azure, Governance, and Fabric. Building scalable cloud solutions and modern data platforms."
-		actions={[
-			{
-				text: "View Case Studies",
-				href: "/case-studies",
-				variant: "primary",
-				icon: "lucide:briefcase",
-			},
-			{
-				text: "Read Blog",
-				href: "/blog",
-				variant: "secondary",
-				icon: "lucide:book-open",
-			},
-		]}
-	/>
-	<Features
-		tagline="Expertise"
-		title="What I Do"
-		subtitle="Specialized skills in cloud architecture and data platform engineering."
-		features={[
-			{
-				title: "Cloud Architecture",
-				description: "Designing scalable solutions on AWS, Azure, and GCP with best practices.",
-				icon: "lucide:cloud",
-				iconClass: "bg-blue-500/10 text-blue-400",
-			},
-			{
-				title: "Databricks & Fabric",
-				description: "Building modern data platforms with Databricks and Microsoft Fabric.",
-				icon: "lucide:database",
-				iconClass: "bg-purple-500/10 text-purple-400",
-			},
-			{
-				title: "Governance & Security",
-				description: "Implementing robust governance frameworks and security best practices.",
-				icon: "lucide:shield",
-				iconClass: "bg-pink-500/10 text-pink-400",
-			},
-		]}
-	/>
+	<link slot="head" rel="preload" href={optimizedImage.src} as="image" />
 	
-	{recentCaseStudies.length > 0 && (
-	<Content2
-		items={recentCaseStudies.map(study => ({
-			title: study.data.title,
-			description: study.data.description,
-			icon: "lucide:briefcase",
-			iconClass: "bg-blue-500/10 text-blue-400",
-		}))}
-		image={devImg}
-		imageAlt="Recent Projects"
-	>
-		<Fragment>
-			<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-				Featured Case Studies
-			</h3>
-			Explore my recent projects and the impact they've made.
-			<a href="/case-studies" class="inline-flex items-center text-blue-400 hover:text-blue-300 mt-4">
-				View all case studies
-				<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-				</svg>
-			</a>
-		</Fragment>
-	</Content2>
-	)}
+	<!-- Hero Section -->
+	<section id="home">
+		<Hero
+			title={`Hi, I'm <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Vasu Bajaj</span><br class="hidden md:block" />`}
+			tagline="Cloud & Data Platform Expert"
+			description="A Solutions Architect specializing in Databricks, GCP, AWS, Azure, Governance, and Fabric. Building scalable cloud solutions and modern data platforms."
+			actions={[
+				{
+					text: "View Case Studies",
+					href: "#case-studies",
+					variant: "primary",
+					icon: "lucide:briefcase",
+				},
+				{
+					text: "Read Blog",
+					href: "#blog",
+					variant: "secondary",
+					icon: "lucide:book-open",
+				},
+			]}
+		/>
+	</section>
 
-	{recentBlogs.length > 0 && (
-	<Content2
-		items={recentBlogs.map(post => ({
-			title: post.data.title,
-			description: post.data.description,
-			icon: "lucide:book-open",
-			iconClass: "bg-purple-500/10 text-purple-400",
-		}))}
-		image={openSourceImg}
-		imageAlt="Recent Blog Posts"
-		isReversed={true}
-	>
-		<Fragment>
-			<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-				Latest from the Blog
-			</h3>
-			Insights, tutorials, and thoughts on web development and design.
-			<a href="/blog" class="inline-flex items-center text-purple-400 hover:text-purple-300 mt-4">
-				Read all posts
-				<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-				</svg>
-			</a>
-		</Fragment>
-	</Content2>
-	)}
+	<!-- Expertise Section -->
+	<section id="expertise">
+		<Features
+			tagline="Expertise"
+			title="What I Do"
+			subtitle="Specialized skills in cloud architecture and data platform engineering."
+			features={[
+				{
+					title: "Cloud Architecture",
+					description: "Designing scalable solutions on AWS, Azure, and GCP with best practices.",
+					icon: "lucide:cloud",
+					iconClass: "bg-blue-500/10 text-blue-400",
+				},
+				{
+					title: "Databricks & Fabric",
+					description: "Building modern data platforms with Databricks and Microsoft Fabric.",
+					icon: "lucide:database",
+					iconClass: "bg-purple-500/10 text-purple-400",
+				},
+				{
+					title: "Governance & Security",
+					description: "Implementing robust governance frameworks and security best practices.",
+					icon: "lucide:shield",
+					iconClass: "bg-pink-500/10 text-pink-400",
+				},
+			]}
+		/>
+	</section>
+
+	<!-- About Section -->
+	<section id="about">
+		<Content2
+			title="About Me"
+			description={[
+				"I'm a Solutions Architect with extensive experience in cloud platforms and data engineering. My expertise spans across Databricks, GCP, AWS, Azure, Governance, and Microsoft Fabric, helping organizations build scalable, secure, and efficient cloud solutions.",
+				"I specialize in designing modern data platforms, implementing governance frameworks, and architecting cloud-native solutions that drive business value. When I'm not architecting solutions, I share insights through technical blogs and contribute to the cloud community.",
+			]}
+			image={aboutImage}
+			imageAlt="Solutions Architect workspace"
+			actions={[
+				{
+					text: "Get in Touch",
+					href: "#contact",
+					variant: "primary",
+					icon: "lucide:mail",
+				},
+				{
+					text: "View Projects",
+					href: "#case-studies",
+					variant: "secondary",
+					icon: "lucide:briefcase",
+				},
+			]}
+		/>
+		<Values
+			items={values}
+			columns={3}
+			tagline="My Approach"
+			title="How I Work"
+			subtitle="Principles that guide my architecture and engineering process"
+		/>
+	</section>
+	
+	<!-- Case Studies Section -->
+	<section id="case-studies">
+		{recentCaseStudies.length > 0 && (
+		<Content2
+			items={recentCaseStudies.map(study => ({
+				title: study.data.title,
+				description: study.data.description,
+				icon: "lucide:briefcase",
+				iconClass: "bg-blue-500/10 text-blue-400",
+			}))}
+			image={devImg}
+			imageAlt="Recent Projects"
+		>
+			<Fragment>
+				<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+					Featured Case Studies
+				</h3>
+				Explore my recent projects and the impact they've made.
+				<a href="/case-studies" class="inline-flex items-center text-blue-600 hover:text-blue-700 mt-4">
+					View all case studies
+					<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+					</svg>
+				</a>
+			</Fragment>
+		</Content2>
+		)}
+	</section>
+
+	<!-- Blog Section -->
+	<section id="blog">
+		{recentBlogs.length > 0 && (
+		<Content2
+			items={recentBlogs.map(post => ({
+				title: post.data.title,
+				description: post.data.description,
+				icon: "lucide:book-open",
+				iconClass: "bg-purple-500/10 text-purple-400",
+			}))}
+			image={devImg}
+			imageAlt="Recent Blog Posts"
+			isReversed={true}
+		>
+			<Fragment>
+				<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+					Latest from the Blog
+				</h3>
+				Insights, tutorials, and thoughts on cloud architecture and data platforms.
+				<a href="/blog" class="inline-flex items-center text-purple-600 hover:text-purple-700 mt-4">
+					Read all posts
+					<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+					</svg>
+				</a>
+			</Fragment>
+		</Content2>
+		)}
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact">
+		<Features
+			tagline="Get in Touch"
+			title="Let's Connect"
+			subtitle="Reach out for cloud architecture consulting, speaking engagements, or collaboration opportunities."
+			classes={{ container: "pt-0 md:pt-0" }}
+			features={[
+				{
+					title: "Email",
+					description: "vasu.c.bajaj@outlook.com",
+					icon: "lucide:mail",
+					iconClass: "bg-blue-500/10 text-blue-600",
+				},
+				{
+					title: "GitHub",
+					description: "@vasubajaj7",
+					icon: "lucide:github",
+					iconClass: "bg-gray-500/10 text-gray-700",
+				},
+				{
+					title: "LinkedIn",
+					description: "Connect professionally",
+					icon: "lucide:linkedin",
+					iconClass: "bg-blue-500/10 text-blue-600",
+				},
+				{
+					title: "Cloud Consulting",
+					description: "Architecture reviews, cloud migration strategies, and platform design.",
+					icon: "lucide:cloud",
+					iconClass: "bg-purple-500/10 text-purple-600",
+				},
+				{
+					title: "Technical Advisory",
+					description: "Databricks, Fabric, AWS, Azure, and GCP expertise for your projects.",
+					icon: "lucide:briefcase",
+					iconClass: "bg-green-500/10 text-green-600",
+				},
+				{
+					title: "Speaking & Writing",
+					description: "Available for tech talks, workshops, and technical content creation.",
+					icon: "lucide:mic",
+					iconClass: "bg-pink-500/10 text-pink-600",
+				},
+			]}
+		/>
+	</section>
 </BaseLayout>
