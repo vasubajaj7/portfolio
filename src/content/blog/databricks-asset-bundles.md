@@ -4,7 +4,7 @@ pubDate: "2024-02-25"
 description: "Learn how Databricks Asset Bundles enable CI/CD, version control, and software engineering best practices for data and AI projects"
 author: "Vasu Bajaj"
 category: "Databricks"
-tags: ["Databricks", "CI/CD", "Infrastructure as Code", "DevOps"]
+tags: ["Databricks", "CI-CD", "Infrastructure as Code", "DevOps"]
 image: "/blog/blog_post_1.webp"
 ---
 
