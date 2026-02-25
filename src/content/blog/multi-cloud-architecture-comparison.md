@@ -5,7 +5,7 @@ description: "A Principal Data Architect's guide to evaluating multi-cloud data 
 author: "Vasu Bajaj"
 category: "Architecture"
 tags: ["Multi-Cloud", "BigQuery", "Databricks", "Redshift", "Architecture Decisions"]
-image: "/blog/blog_post_1.webp"
+image: "/blog/blog_post_1_1768848683359.webp"
 ---
 
 ## Introduction
