@@ -14,10 +14,10 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/in/vasubajaj",
   },
   navLinks: [
-    { text: "Home", href: "#home" },
-    { text: "About", href: "#about" },
-    { text: "Case Studies", href: "#case-studies" },
-    { text: "Blog", href: "#blog" },
-    { text: "Contact", href: "#contact" },
+    { text: "Home", href: "/" },
+    { text: "About", href: "/#about" },
+    { text: "Case Studies", href: "/#case-studies" },
+    { text: "Blog", href: "/#blog" },
+    { text: "Contact", href: "/#contact" },
   ],
 };
