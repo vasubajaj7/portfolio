@@ -21,7 +21,10 @@ import { siteConfig } from "../../config/site";
         <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-8">
                 {
-                    siteConfig.navLinks.map((link) => (
+                    siteConfig.navLinks.filter(link => {
+                        const isHomePage = Astro.url.pathname === '/';
+                        return !(isHomePage && link.text === 'Home');
+                    }).map((link) => (
                         <a
                             href={link.href}
                             class="text-sm font-medium text-foreground transition-colors hover:text-primary"
@@ -93,7 +96,10 @@ import { siteConfig } from "../../config/site";
             class="space-y-1 border-b border-border bg-background/90 px-2 pb-3 pt-2 sm:px-3"
         >
             {
-                siteConfig.navLinks.map((link) => (
+                siteConfig.navLinks.filter(link => {
+                    const isHomePage = Astro.url.pathname === '/';
+                    return !(isHomePage && link.text === 'Home');
+                }).map((link) => (
                     <a
                         href={link.href}
                         class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"

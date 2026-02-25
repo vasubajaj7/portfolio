@@ -124,10 +124,10 @@ const optimizedImage = await getImage({
 			imageAlt="Solutions Architect workspace"
 			actions={[
 				{
-					text: "Get in Touch",
-					href: "#contact",
+					text: "Learn More",
+					href: "/about",
 					variant: "primary",
-					icon: "lucide:mail",
+					icon: "lucide:user",
 				},
 				{
 					text: "View Projects",
@@ -196,53 +196,5 @@ const optimizedImage = await getImage({
 			</Fragment>
 		</Content2>
 		)}
-	</section>
-
-	<!-- Contact Section -->
-	<section id="contact">
-		<Features
-			tagline="Get in Touch"
-			title="Let's Connect"
-			subtitle="Reach out for cloud architecture consulting, speaking engagements, or collaboration opportunities."
-			classes={{ container: "pt-0 md:pt-0" }}
-			features={[
-				{
-					title: "Email",
-					description: "vasu.c.bajaj@outlook.com",
-					icon: "lucide:mail",
-					iconClass: "bg-blue-500/10 text-blue-600",
-				},
-				{
-					title: "GitHub",
-					description: "@vasubajaj7",
-					icon: "lucide:github",
-					iconClass: "bg-gray-500/10 text-gray-700",
-				},
-				{
-					title: "LinkedIn",
-					description: "Connect professionally",
-					icon: "lucide:linkedin",
-					iconClass: "bg-blue-500/10 text-blue-600",
-				},
-				{
-					title: "Cloud Consulting",
-					description: "Architecture reviews, cloud migration strategies, and platform design.",
-					icon: "lucide:cloud",
-					iconClass: "bg-purple-500/10 text-purple-600",
-				},
-				{
-					title: "Technical Advisory",
-					description: "Databricks, Fabric, AWS, Azure, and GCP expertise for your projects.",
-					icon: "lucide:briefcase",
-					iconClass: "bg-green-500/10 text-green-600",
-				},
-				{
-					title: "Speaking & Writing",
-					description: "Available for tech talks, workshops, and technical content creation.",
-					icon: "lucide:mic",
-					iconClass: "bg-pink-500/10 text-pink-600",
-				},
-			]}
-		/>
 	</section>
 </BaseLayout>
