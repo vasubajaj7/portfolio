@@ -3,9 +3,7 @@ import { siteConfig } from "../config/site";
 
 const robotsTxt = `
 User-agent: *
-Allow: /
-
-Sitemap: ${new URL("sitemap-index.xml", siteConfig.url).href}
+Disallow: /
 `.trim();
 
 export const GET: APIRoute = () => {
