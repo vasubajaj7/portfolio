@@ -32,7 +32,7 @@
     "astro-icon": "^1.1.5",
     "remark-reading-time": "^2.0.2",
     "tailwindcss": "^4.1.18",
-    "three": "r128",
+    "three": "^0.160.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
