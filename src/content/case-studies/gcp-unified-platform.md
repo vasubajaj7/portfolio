@@ -3,7 +3,7 @@ title: "Unified Data Platform on Google Cloud"
 description: "Designed scalable GCP data platform with BigQuery achieving 10x performance improvement and $7K annual savings"
 client: "Major E-Commerce Company"
 date: 2023-09-10
-image: "/case-studies/cloud-migration.webp"
+image: "/blog/blog_post_3_1768848720552.webp"
 tags: ["GCP", "BigQuery", "Cloud Composer", "Dataflow"]
 category: "Cloud Architecture"
 link: ""

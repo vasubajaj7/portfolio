@@ -3,7 +3,7 @@ title: "Scalable Data Platform on Azure Databricks"
 description: "Built enterprise-grade ETL pipelines on Azure Databricks with 40% efficiency improvement and 30% cost reduction"
 client: "Enterprise Technology Company"
 date: 2024-06-15
-image: "/case-studies/databricks-guide.webp"
+image: "/blog/blog_post_2_1768848698871.webp"
 tags: ["Azure", "Databricks", "Delta Lake", "ETL"]
 category: "Data Engineering"
 link: ""

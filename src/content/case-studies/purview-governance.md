@@ -3,7 +3,7 @@ title: "Enterprise Data Governance for Banking with Microsoft Purview"
 description: "Implemented comprehensive data governance using Microsoft Purview for a major bank using Microsoft Fabric"
 client: "Major Banking Institution"
 date: 2025-01-15
-image: "/case-studies/cloud-migration.webp"
+image: "/blog/blog_post_1_1768848683359.webp"
 tags: ["Microsoft Purview", "Fabric", "Governance", "Banking"]
 category: "Data Governance"
 link: ""
