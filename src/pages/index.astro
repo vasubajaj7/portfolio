@@ -11,7 +11,7 @@ import { getCollection } from "astro:content";
 import { getImage } from "astro:assets";
 
 const metadata = {
-	title: `${siteConfig.name} — Solutions Architect`,
+	title: `${siteConfig.name} — Principal Data Architect`,
 	description: siteConfig.description,
 	ignoreTitleTemplate: true,
 };
@@ -64,20 +64,20 @@ const optimizedImage = await getImage({
 	<section id="home">
 		<Hero
 			title={`Hi, I'm <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Vasu Bajaj</span><br class="hidden md:block" />`}
-			tagline="Technical Architect | 12+ Years Experience"
-			description="Specializing in scalable data platforms, cloud-native architectures, and enterprise governance across AWS, GCP, Azure, Databricks, Snowflake, and Microsoft Fabric. Delivering 30-40% cost reductions and 10x performance improvements."
+			tagline="Principal Data Architect | Multi-Cloud Data Platforms"
+			description="Architecting scalable, governed, multi-cloud data platforms across GCP, AWS, and Azure Databricks. 12+ years designing TB-scale ingestion pipelines, optimizing data lake architectures, and enabling analytics at enterprise scale. Proven track record: 3TB/day data processing, 40% cost reductions via partitioning strategies, 10x performance improvements through architectural optimization."
 			actions={[
 				{
-					text: "View Case Studies",
+					text: "View Architecture Case Studies",
 					href: "#case-studies",
 					variant: "primary",
 					icon: "lucide:briefcase",
 				},
 				{
-					text: "Read Blog",
-					href: "#blog",
+					text: "Download Resume",
+					href: "/resume.pdf",
 					variant: "secondary",
-					icon: "lucide:book-open",
+					icon: "lucide:download",
 				},
 			]}
 		/>
@@ -86,25 +86,25 @@ const optimizedImage = await getImage({
 	<!-- Expertise Section -->
 	<section id="expertise">
 		<Features
-			tagline="Expertise"
-			title="What I Do"
-			subtitle="Specialized skills in cloud architecture and data platform engineering."
+			tagline="Enterprise Architecture Capabilities"
+			title="Platform Architecture Expertise"
+			subtitle="Designing scalable, governed, multi-cloud data platforms with measurable business impact."
 			features={[
 				{
-					title: "Cloud Architecture",
-					description: "Designing scalable solutions on AWS, Azure, and GCP with best practices.",
+					title: "Multi-Cloud Data Architecture",
+					description: "Architecting TB-scale data platforms across GCP BigQuery, AWS Redshift, Azure Databricks with unified governance and cost optimization strategies.",
 					icon: "lucide:cloud",
 					iconClass: "bg-blue-500/10 text-blue-400",
 				},
 				{
-					title: "Databricks & Fabric",
-					description: "Building modern data platforms with Databricks and Microsoft Fabric.",
+					title: "Data Lakehouse Architecture",
+					description: "Designing Medallion architecture on Databricks Delta Lake and Snowflake with 3TB/day ingestion, ACID transactions, and schema evolution.",
 					icon: "lucide:database",
 					iconClass: "bg-purple-500/10 text-purple-400",
 				},
 				{
-					title: "Governance & Security",
-					description: "Implementing robust governance frameworks and security best practices.",
+					title: "Enterprise Data Governance",
+					description: "Implementing governed data platforms with Unity Catalog, Purview, and IAM. Column-level security, PII masking, data lineage, and compliance frameworks.",
 					icon: "lucide:shield",
 					iconClass: "bg-pink-500/10 text-pink-400",
 				},
@@ -117,20 +117,20 @@ const optimizedImage = await getImage({
 		<Content2
 			title="About Me"
 			description={[
-				"I'm a Technical Architect with 12+ years of experience designing scalable data platforms, cloud-native architectures, and governed analytics ecosystems across AWS, GCP, Azure, Snowflake, Databricks, and Microsoft Fabric.",
-				"I deliver measurable results: 30-40% cost reductions, 10x performance improvements, and enterprise-grade governance solutions. My expertise spans data warehousing, platform modernization, security, and leading cross-functional teams to build robust, compliant data solutions.",
+				"I'm a Principal Data Architect with 12+ years architecting scalable, governed, multi-cloud data platforms across GCP, AWS, Azure, Databricks, Snowflake, and Microsoft Fabric. I specialize in designing TB-scale data lake architectures, implementing enterprise governance frameworks, and optimizing platform costs while maintaining performance at scale.",
+				"My architectural approach delivers measurable business impact: 3TB/day data processing platforms, 40% cost reductions through strategic partitioning and clustering, 10x performance improvements via architectural optimization, and enterprise-grade governance with Unity Catalog and Purview. I lead cross-functional teams to design robust, compliant, and high-performing data solutions that scale.",
 			]}
 			image={aboutImage}
 			imageAlt="Technical Architect workspace"
 			actions={[
 				{
-					text: "Learn More",
+					text: "Architecture Philosophy",
 					href: "/about",
 					variant: "primary",
 					icon: "lucide:user",
 				},
 				{
-					text: "View Projects",
+					text: "View Architecture Case Studies",
 					href: "#case-studies",
 					variant: "secondary",
 					icon: "lucide:briefcase",
@@ -154,11 +154,11 @@ const optimizedImage = await getImage({
 		>
 			<Fragment>
 				<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-					Featured Case Studies
+					Enterprise Data Platform Architecture
 				</h3>
-				Explore my recent projects and the impact they've made.
+				Deep-dive technical case studies showcasing multi-cloud architecture, governance frameworks, and measurable business impact.
 				<a href="/case-studies" class="inline-flex items-center text-blue-600 hover:text-blue-700 mt-4">
-					View all case studies
+					View all architecture case studies
 					<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 					</svg>
@@ -184,9 +184,9 @@ const optimizedImage = await getImage({
 		>
 			<Fragment>
 				<h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-					Latest from the Blog
+					Architecture Insights & Thought Leadership
 				</h3>
-				Insights, tutorials, and thoughts on cloud architecture and data platforms.
+				Deep technical articles on data architecture patterns, multi-cloud strategies, and platform design decisions.
 				<a href="/blog" class="inline-flex items-center text-purple-600 hover:text-purple-700 mt-4">
 					Read all posts
 					<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

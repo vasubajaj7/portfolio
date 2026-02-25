@@ -6,34 +6,34 @@ import Values from "../components/widgets/Values.astro";
 import aboutImage from "../assets/images/about-office.webp";
 
 const metadata = {
-    title: "About Me",
-    description: "Learn more about my journey as a Solutions Architect specializing in cloud platforms and data engineering.",
+    title: "About — Principal Data Architect",
+    description: "Learn about my architectural philosophy, enterprise data platform design approach, and 12+ years of multi-cloud architecture expertise.",
 };
 
 const values = [
     {
-        title: "Cloud-Native Architecture",
-        description: "Designing scalable solutions on AWS, Azure, and GCP with proven cost optimization strategies.",
+        title: "Architecture-First Approach",
+        description: "Designing scalable, governed data platforms with clear architectural decisions, tradeoff analysis, and long-term maintainability.",
     },
     {
-        title: "Data Platform Engineering",
-        description: "Building enterprise data platforms with Databricks, Snowflake, and Microsoft Fabric.",
+        title: "Multi-Cloud Expertise",
+        description: "Architecting unified data platforms across GCP BigQuery, AWS Redshift, Azure Databricks with consistent governance and cost optimization.",
     },
     {
-        title: "Enterprise Governance",
-        description: "Implementing robust governance frameworks using Microsoft Purview and Unity Catalog.",
+        title: "Data Modeling & Governance",
+        description: "Implementing Data Vault 2.0, Medallion architecture, and dimensional modeling with Unity Catalog, Purview, and IAM-based access control.",
     },
     {
-        title: "Performance Optimization",
-        description: "Delivering 10x performance improvements through strategic optimization and best practices.",
+        title: "Cost & Performance Optimization",
+        description: "Delivering 40% cost reductions through partitioning strategies, clustering, and autoscaling. Achieving 10x performance via architectural optimization.",
     },
     {
-        title: "Cost Management",
-        description: "Achieving 30-40% cost reductions through infrastructure optimization and efficient resource utilization.",
+        title: "Enterprise-Grade Security",
+        description: "Implementing column-level security, PII masking, RBAC, data lineage, and compliance frameworks for regulated industries.",
     },
     {
-        title: "Team Leadership",
-        description: "Leading cross-functional teams and mentoring engineers to deliver high-quality solutions.",
+        title: "Measurable Business Impact",
+        description: "Quantifying architectural decisions with scale metrics: TB/day processing, query latency reduction, cost savings, and uptime SLAs.",
     },
 ];
 
@@ -48,20 +48,20 @@ const optimizedImage = await getImage({
     <Content2
         title="About Me"
         description={[
-            "I'm a Technical Architect with 12+ years of experience designing scalable data platforms, cloud-native architectures, and governed analytics ecosystems across AWS, GCP, Azure, Snowflake, Databricks, and Microsoft Fabric. I specialize in data warehousing, platform modernization, cost optimization, and data governance.",
-            "Throughout my career, I've delivered 30-40% cost reductions and 10x performance improvements for enterprise clients. My expertise spans enterprise data governance, security, access control, and leveraging GenAI-assisted delivery to accelerate project timelines by 40%. I lead cross-functional teams to build robust, compliant, and high-performing data solutions.",
+            "I'm a Principal Data Architect with 12+ years architecting scalable, governed, multi-cloud data platforms across GCP, AWS, Azure, Databricks, Snowflake, and Microsoft Fabric. I specialize in designing TB-scale data lake architectures, implementing Medallion and Data Vault modeling patterns, and building enterprise governance frameworks with Unity Catalog and Purview.",
+            "My architectural approach emphasizes measurable business impact: 3TB/day data processing platforms, 40% cost reductions through strategic partitioning and clustering, 10x performance improvements via query optimization and autoscaling, and enterprise-grade governance with column-level security and data lineage. I lead architectural decisions for cross-functional teams, evaluating tradeoffs between Snowflake vs BigQuery, Data Vault vs Dimensional modeling, and multi-cloud vs single-cloud strategies.",
         ]}
         image={aboutImage}
         imageAlt="Technical Architect workspace"
         actions={[
             {
-                text: "Get in Touch",
+                text: "Contact for Architecture Consultation",
                 href: "/#contact",
                 variant: "primary",
                 icon: "lucide:mail",
             },
             {
-                text: "View Projects",
+                text: "View Architecture Case Studies",
                 href: "/#case-studies",
                 variant: "secondary",
                 icon: "lucide:briefcase",
@@ -71,9 +71,9 @@ const optimizedImage = await getImage({
     <Values
         items={values}
         columns={3}
-        tagline="My Approach"
-        title="How I Work"
-        subtitle="Principles that guide my architecture and engineering process"
+        tagline="Architectural Philosophy"
+        title="How I Design Data Platforms"
+        subtitle="Principles guiding enterprise-scale architecture decisions and platform design"
     />
     
     <!-- Contact Section -->

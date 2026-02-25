@@ -2,7 +2,7 @@ import ogImage from "../assets/og-image.png";
 
 export const siteConfig = {
   name: "Vasu Bajaj",
-  description: "Technical Architect with 12+ years designing scalable data platforms across AWS, GCP, Azure, Databricks, Snowflake, and Microsoft Fabric. Delivering 30-40% cost reductions and 10x performance improvements.",
+  description: "Principal Data Architect specializing in designing scalable, governed, multi-cloud data platforms across GCP, AWS, and Azure. 12+ years architecting TB-scale data solutions with proven 30-40% cost reductions, 10x performance improvements, and enterprise governance expertise.",
   url: "https://vasubajaj.com",
   lang: "en",
   locale: "en_US",
