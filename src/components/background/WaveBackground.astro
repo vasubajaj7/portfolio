@@ -2,30 +2,30 @@
 // Animated Wave Background Component - Bottom Accent
 ---
 
-<div id="wave-background" class="fixed bottom-0 left-0 right-0 -z-10 h-96 overflow-hidden pointer-events-none">
+<div id="wave-background" class="fixed bottom-0 left-0 right-0 -z-10 h-screen overflow-hidden pointer-events-none">
   <svg
-    class="absolute bottom-0 w-full"
+    class="absolute bottom-0 w-full h-full"
     preserveAspectRatio="none"
-    viewBox="0 0 1200 100"
+    viewBox="0 0 1200 400"
     xmlns="http://www.w3.org/2000/svg"
   >
     <!-- Wave 1 - Primary color, slower animation -->
     <path
-      d="M0,50 Q300,30 600,50 T1200,50 L1200,100 L0,100 Z"
+      d="M0,200 Q300,120 600,200 T1200,200 L1200,400 L0,400 Z"
       class="wave wave-1"
       fill="url(#waveGradient1)"
     />
 
     <!-- Wave 2 - Accent color, medium speed -->
     <path
-      d="M0,60 Q300,40 600,60 T1200,60 L1200,100 L0,100 Z"
+      d="M0,240 Q300,160 600,240 T1200,240 L1200,400 L0,400 Z"
       class="wave wave-2"
       fill="url(#waveGradient2)"
     />
 
     <!-- Wave 3 - Light accent, faster animation -->
     <path
-      d="M0,70 Q300,55 600,70 T1200,70 L1200,100 L0,100 Z"
+      d="M0,280 Q300,220 600,280 T1200,280 L1200,400 L0,400 Z"
       class="wave wave-3"
       fill="url(#waveGradient3)"
     />
@@ -33,17 +33,17 @@
     <!-- Gradients -->
     <defs>
       <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#0066ff;stop-opacity:0.15" />
+        <stop offset="0%" style="stop-color:#0066ff;stop-opacity:0.35" />
         <stop offset="100%" style="stop-color:#0066ff;stop-opacity:0" />
       </linearGradient>
 
       <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#0099ff;stop-opacity:0.1" />
+        <stop offset="0%" style="stop-color:#0099ff;stop-opacity:0.25" />
         <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0" />
       </linearGradient>
 
       <linearGradient id="waveGradient3" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" style="stop-color:#00ccff;stop-opacity:0.08" />
+        <stop offset="0%" style="stop-color:#00ccff;stop-opacity:0.15" />
         <stop offset="100%" style="stop-color:#00ccff;stop-opacity:0" />
       </linearGradient>
     </defs>
@@ -84,31 +84,31 @@
 
   @keyframes wave {
     0%, 100% {
-      d: path('M0,50 Q300,30 600,50 T1200,50 L1200,100 L0,100 Z');
+      d: path('M0,200 Q300,120 600,200 T1200,200 L1200,400 L0,400 Z');
     }
     25% {
-      d: path('M0,50 Q300,40 600,50 T1200,50 L1200,100 L0,100 Z');
+      d: path('M0,200 Q300,160 600,200 T1200,200 L1200,400 L0,400 Z');
     }
     50% {
-      d: path('M0,50 Q300,60 600,50 T1200,50 L1200,100 L0,100 Z');
+      d: path('M0,200 Q300,240 600,200 T1200,200 L1200,400 L0,400 Z');
     }
     75% {
-      d: path('M0,50 Q300,35 600,50 T1200,50 L1200,100 L0,100 Z');
+      d: path('M0,200 Q300,140 600,200 T1200,200 L1200,400 L0,400 Z');
     }
   }
 
   @keyframes wave2 {
     0%, 100% {
-      d: path('M0,60 Q300,40 600,60 T1200,60 L1200,100 L0,100 Z');
+      d: path('M0,240 Q300,160 600,240 T1200,240 L1200,400 L0,400 Z');
     }
     25% {
-      d: path('M0,60 Q300,50 600,60 T1200,60 L1200,100 L0,100 Z');
+      d: path('M0,240 Q300,200 600,240 T1200,240 L1200,400 L0,400 Z');
     }
     50% {
-      d: path('M0,60 Q300,70 600,60 T1200,60 L1200,100 L0,100 Z');
+      d: path('M0,240 Q300,280 600,240 T1200,240 L1200,400 L0,400 Z');
     }
     75% {
-      d: path('M0,60 Q300,45 600,60 T1200,60 L1200,100 L0,100 Z');
+      d: path('M0,240 Q300,180 600,240 T1200,240 L1200,400 L0,400 Z');
     }
   }
 
@@ -118,16 +118,16 @@
 
   @keyframes wave3 {
     0%, 100% {
-      d: path('M0,70 Q300,55 600,70 T1200,70 L1200,100 L0,100 Z');
+      d: path('M0,280 Q300,220 600,280 T1200,280 L1200,400 L0,400 Z');
     }
     25% {
-      d: path('M0,70 Q300,65 600,70 T1200,70 L1200,100 L0,100 Z');
+      d: path('M0,280 Q300,260 600,280 T1200,280 L1200,400 L0,400 Z');
     }
     50% {
-      d: path('M0,70 Q300,80 600,70 T1200,70 L1200,100 L0,100 Z');
+      d: path('M0,280 Q300,320 600,280 T1200,280 L1200,400 L0,400 Z');
     }
     75% {
-      d: path('M0,70 Q300,60 600,70 T1200,70 L1200,100 L0,100 Z');
+      d: path('M0,280 Q300,240 600,280 T1200,280 L1200,400 L0,400 Z');
     }
   }
 
